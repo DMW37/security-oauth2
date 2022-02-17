@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///security_authority?useSSL=true
+    username: root
+    password: 101407180926yJC
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  type-aliases-package: com.study.domain
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.study: debug
