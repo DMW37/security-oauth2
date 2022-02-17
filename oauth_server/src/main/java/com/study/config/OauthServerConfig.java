@@ -77,7 +77,9 @@ public class OauthServerConfig extends AuthorizationServerConfigurerAdapter {
     //授权服务器端点配置器
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.approvalStore(approvalStore())
+        endpoints
+                .userDetailsService(sysUserService) //支持刷新token
+                .approvalStore(approvalStore())
                 .authenticationManager(authenticationManager)
                 .authorizationCodeServices(authorizationCodeServices())
                 .tokenStore(tokenStore());
